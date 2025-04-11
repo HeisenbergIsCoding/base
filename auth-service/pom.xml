@@ -14,4 +14,13 @@
     <description>auth-service</description>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.person</groupId>
+            <artifactId>common-utils</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        
+        <!-- 其他依賴 -->
+    </dependencies>
 </project>
