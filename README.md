@@ -10,9 +10,9 @@
 - **認證服務**：處理用戶認證與授權
 - **服務註冊中心**：服務發現與註冊
 - **配置中心**：集中管理配置
-- **分佈式追蹤**：監控請求流程
+- **分佈式追蹤/效能監控**：Prometheus/Grafana/Zipkin，追蹤請求流程與效能指標
 - **消息代理**：處理服務間非同步通信
-- **日誌監控**：集中式日誌管理與監控
+- **日誌集中監控**：ELK Stack（Elasticsearch, Logstash, Kibana）
 - **通用工具**：共享的工具類和功能
 - **Web 前端**：用戶界面
 
@@ -27,7 +27,7 @@
 - **認證授權**：OAuth2/JWT
 - **分佈式追蹤**：Spring Cloud Sleuth/Zipkin
 - **消息中間件**：Kafka/RabbitMQ
-- **監控**：Prometheus/Grafana
+- **監控**：Prometheus/Grafana/Zipkin/ELK
 
 ## 模塊說明
 
@@ -38,7 +38,7 @@
 - **common-utils**：共享的工具類和功能
 - **tracing-service**：分佈式追蹤服務
 - **message-broker**：消息代理服務
-- **logging-monitoring**：日誌與監控服務
+- **logging-monitoring**：日誌、指標、分散式追蹤與監控服務（僅含設定檔與 docker-compose，不含程式碼）
 - **web**：前端應用
 
 ## 快速開始
@@ -79,6 +79,15 @@ cd ../api-gateway
 mvn spring-boot:run
 
 # 啟動其他服務...
+
+# 4. 啟動集中監控服務（ELK/Prometheus/Grafana/Zipkin）
+cd ../logging-monitoring
+# 一鍵啟動所有監控服務
+# 須先安裝 Docker 與 docker-compose
+# 會自動啟動 ELK、Prometheus、Grafana、Zipkin
+# 相關設定檔請見 logging-monitoring 目錄
+
+docker-compose up -d
 ```
 
 ## 開發指南
@@ -95,7 +104,7 @@ mvn spring-boot:run
 
 ## 項目狀態
 
-目前項目處於開發初期階段，架構框架已搭建完成，功能模塊尚待實現。
+目前項目已建構完成微服務主架構，集中監控（ELK、Prometheus、Grafana、Zipkin）已可即時運作，通用工具庫與各服務可持續擴充。
 
 ## 許可證
 
