@@ -100,12 +100,6 @@
             <artifactId>spring-cloud-starter-sleuth</artifactId>
             <version>3.1.7</version>
         </dependency>
-        <!-- zipkin -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zipkin</artifactId>
-            <version>3.1.7</version>
-        </dependency>
         
         <!-- 其他依賴 -->
     </dependencies>
